@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.register.OptionalInfoFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_panel_multi_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký thành viên mới"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_2"
+        android:layout_width="match_parent"
+        android:layout_below="@id/relative_layout_1"
+        android:layout_marginTop="-75dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_border_with_shadow"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin khác"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="3/3"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/text_view_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phần không bắt buộc"
+            android:layout_below="@id/text_view_1"
+            android:layout_marginTop="5dp"/>
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/primaryColor_2"
+            android:layout_below="@id/text_view_3"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/text_view_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_below="@id/view_1"
+            android:layout_marginTop="15dp"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:hint="Nhập địa chỉ email của bạn"
+            android:layout_below="@id/text_view_4"
+            android:backgroundTint="@color/light_gray"/>
+
+        <TextView
+            android:id="@+id/text_view_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_error"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/edit_text_email"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_accept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/custom_btn_addcart_hightlight"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoàn thành"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

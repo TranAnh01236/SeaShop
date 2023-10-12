@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030861473880",
+    "project_id": "shippingapp-a2a75",
+    "storage_bucket": "shippingapp-a2a75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030861473880:android:bb5ca78149faf60084e22d",
+        "android_client_info": {
+          "package_name": "org.trananh.shoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030861473880-c3t430am1bh4iokjvdiocdobvlnse4ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLgEJgAKMHw-0LqDZd7i3JYsTO3lcdTn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030861473880-c3t430am1bh4iokjvdiocdobvlnse4ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.login.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_your_account_and_password_to_login"
+            />
+
+        <EditText
+            android:id="@+id/txt_account"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_gray"
+            android:drawableLeft="@drawable/ic_person"
+            android:hint="@string/phone_login_name"
+            android:drawablePadding="10dp"
+            android:imeOptions="actionNext"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/txt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:drawableLeft="@drawable/ic_lock"
+            android:hint="@string/password"
+            android:drawablePadding="10dp"
+            android:backgroundTint="@color/light_gray"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tv_show_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/show_password"
+                android:textSize="12dp"
+                android:textColor="@color/primaryColor_2"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_gray"
+                android:background="@drawable/custom_btn_login_2"
+                />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/progressColor"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forget_password"
+                android:textSize="12dp"
+                android:textColor="@color/primaryColor_2"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_error"
+            android:layout_marginTop="15dp"
+            />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/or"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:textColor="@color/dark_gray"-->
+<!--            />-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btn_login_with_google"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/custom_btn_login_3"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:drawableLeft="@drawable/ic_google"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:text="@string/login_with_google"-->
+<!--            android:textAllCaps="false"/>-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btn_login_with_facebook"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/custom_btn_login_3"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:drawableLeft="@drawable/ic_facebook"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:text="@string/login_with_facebook"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:layout_marginBottom="15dp"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Do_not_have_an_account"
+            android:textColor="@color/dark_gray"/>
+
+        <TextView
+            android:id="@+id/text_view_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:textColor="@color/primaryColor_2"
+            android:layout_marginLeft="3dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ShoppingApp</string>
+    <string name="Home">Trang chủ</string>
+    <string name="category">Danh mục</string>
+    <string name="notification">Thông báo</string>
+    <string name="account">Tài khoản</string>
+
+    <string name="what_are_you_looking_for">Bạn cần tìm gì?</string>
+    <string name="product_name_category">Tên sản phẩm, loại sản phẩm,...</string>
+
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+
+    <string name="my_order">Đơn hàng của tôi</string>
+    <string name="view_all_orders">Xem tất cả đơn hàng</string>
+    <string name="wait_for_confirmation">Chờ xác nhận</string>
+    <string name="delivering">Đang giao</string>
+    <string name="refunds_and_canel">Hoàn trả &amp; hủy</string>
+    <string name="waiting_for_delivery">Chờ lấy hàng</string>
+    <string name="account_setting">Thiết lập tài khoản</string>
+    <string name="help">Hỗ trợ</string>
+    <string name="support_center">Trung tâm hỗ trợ</string>
+    <string name="introduction">Giới thiệu</string>
+    <string name="phone_login_name">Số điện thoại/Tên đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="hide_password">Ẩn mật khẩu</string>
+    <string name="show_password">Hiện mật khẩu</string>
+    <string name="forget_password">Quên mật khẩu?</string>
+    <string name="or">HOẶC</string>
+    <string name="login_with_google">Đăng nhập bằng Google</string>
+    <string name="login_with_facebook">Đăng nhập với Facebook</string>
+    <string name="Do_not_have_an_account">Bạn chưa có tài khoản?</string>
+    <string name="Sent_the_code_to_phone_number">Đã gửi mã đến số điện thoại</string>
+    <string name="Please_check_your_SMS_and_enter_the_confirmation_code_below">Vui lòng kiểm tra SMS của bạn và nhập mã xác nhận bên dưới</string>
+    <string name="Please_do_not_share_the_authentication_code_to_avoid_losing_your_account">Vui lòng không chia sẻ mã xác thực để tránh bị mất tài khoản</string>
+    <string name="please_enter_your_account_and_password_to_login">Vui lòng nhập tài khoản và mật khẩu của bạn để đăng nhập</string>
+    <string name="resend_otp">Gửi lại mã</string>
+    <string name="did_not_receive_the_otp">Không nhận được mã?</string>
+    <string name="verify">Xác minh</string>
+
+    <string name="setting">Cài đặt</string>
+    <string name="security_settings">Thiết lập bảo mật</string>
+    <string name="request_to_delete_account">Yêu cầu xóa tài khoản</string>
+    <string name="version">Phiên bản</string>
+    <string name="logout">Đăng xuất</string>
+
+    <string name="promotion">Khuyến mãi</string>
+    <string name="product_detail">Chi tiết sản phẩm</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

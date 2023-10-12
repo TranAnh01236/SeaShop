@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".account.register.AdressFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_panel_multi_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký thành viên mới"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_2"
+        android:layout_width="match_parent"
+        android:layout_below="@id/relative_layout_1"
+        android:layout_marginTop="-75dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_border_with_shadow"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông tin địa chỉ"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="2/3"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/text_view_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Để đảm bảo quyền lợi cá nhân, khách hàng voi lòng điển chính xác thông tin cá nhân"
+            android:layout_below="@id/text_view_1"
+            android:layout_marginTop="5dp"/>
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/primaryColor_2"
+            android:layout_below="@id/text_view_3"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/text_view_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tỉnh/Thành phố đang sống"
+            android:layout_below="@id/view_1"
+            android:layout_marginTop="15dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_1"
+            android:layout_width="match_parent"
+            android:layout_below="@id/text_view_4"
+            android:layout_height="wrap_content"
+            android:hint="Chọn tỉnh/thành phố"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_txt_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quận/Huyện"
+            android:layout_below="@id/text_input_1"
+            android:layout_marginTop="10dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_2"
+            android:layout_width="match_parent"
+            android:layout_below="@id/text_view_5"
+            android:layout_height="wrap_content"
+            android:hint="Chọn quận/huyện"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_txt_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phường/Xã"
+            android:layout_below="@id/text_input_2"
+            android:layout_marginTop="10dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_3"
+            android:layout_width="match_parent"
+            android:layout_below="@id/text_view_6"
+            android:layout_height="wrap_content"
+            android:hint="Chọn phường/xã"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_txt_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số nhà, đường"
+            android:layout_below="@id/text_input_3"
+            android:layout_marginTop="10dp"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:layout_marginTop="5dp"
+            android:hint="Nhập địa chỉ"
+            android:inputType="none"
+            android:layout_below="@id/text_view_7"
+            android:backgroundTint="@color/light_gray"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_accept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/custom_btn_addcart"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiếp tục"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

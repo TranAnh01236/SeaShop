@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="190dp"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_item_product_1"
+    android:padding="10dp"
+    android:id="@+id/relative_layout_product"
+    android:layout_marginBottom="15dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tv_product_name">
+
+            <ImageView
+                android:id="@+id/img_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/img_nuoctuong" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NƯỚC TƯƠNG"
+            android:layout_marginTop="15dp"
+            android:layout_above="@id/tv_unit_product"
+            />
+
+        <TextView
+            android:id="@+id/tv_unit_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đơn vị: chai"
+            android:textSize="10dp"
+            android:layout_above="@id/tv_price_product"/>
+
+        <TextView
+            android:id="@+id/tv_price_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24.000đ"
+            android:textColor="@color/primaryColor"
+            android:layout_above="@id/linear_layout_cart"
+            />
+        <LinearLayout
+            android:id="@+id/linear_layout_cart"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_btn_addcart_hightlight"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm vào giỏ"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+</RelativeLayout>

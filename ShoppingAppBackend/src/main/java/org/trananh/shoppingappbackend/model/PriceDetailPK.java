@@ -14,7 +14,7 @@ public class PriceDetailPK implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String priceHeader;
-	private UnitOfMeasurePK unitOfMeasure;
+	private int unitOfMeasure;
 	public PriceDetailPK() {
 		super();
 	}
@@ -31,6 +31,7 @@ public class PriceDetailPK implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		PriceDetailPK other = (PriceDetailPK) obj;
-		return Objects.equals(priceHeader, other.priceHeader) && Objects.equals(unitOfMeasure, other.unitOfMeasure);
+		return Objects.equals(priceHeader, other.priceHeader) && unitOfMeasure == other.unitOfMeasure;
 	}
+	
 }

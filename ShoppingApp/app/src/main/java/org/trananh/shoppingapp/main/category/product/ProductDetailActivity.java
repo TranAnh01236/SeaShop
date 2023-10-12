@@ -26,6 +26,9 @@ import org.trananh.shoppingapp.model.UnitOfMeasure;
 import org.trananh.shoppingapp.util.Constants;
 import org.trananh.shoppingapp.util.MyHttpResponseArray;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +43,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private UnitOfMeasureController mUnitOfMeasureController;
     private UnitAdapter mUnitAdapter;
     private RecyclerView mRecyclerViewUnit;
-    private TextView tvName, tvDescription, tvViewAll, tvCart;
+    private TextView tvName, tvDescription, tvViewAll, tvCart, tvPrice;
     private ImageView image;
 
     private RecyclerView recyclerViewProduct;
@@ -77,6 +80,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                 recyclerViewProduct = findViewById(R.id.recycle_view_product);
                 tvViewAll = findViewById(R.id.tv_view_all);
                 relativeLayoutCart = findViewById(R.id.relative_layout_button_cart);
+                tvPrice = findViewById(R.id.text_view_price);
                 tvCart = findViewById(R.id.tv_cart);
 
                 relativeLayoutCart.setClickable(false);
@@ -91,11 +95,14 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                 mUnitAdapter = new UnitAdapter(this, new UnitAdapter.UnitMeasureListener() {
                     @Override
-                    public void onClick(UnitOfMeasure unitOfMeasure) {
+                    public void onClick(UnitOfMeasure unitOfMeasure, double price) {
                         relativeLayoutCart.setClickable(true);
                         relativeLayoutCart.setBackgroundResource(R.drawable.custom_btn_addcart_hightlight);
                         tvCart.setTextColor(getResources().getColor(R.color.white));
                         Glide.with(ProductDetailActivity.this).load(unitOfMeasure.getImageUrl()).into(image);
+
+                        tvPrice.setText(Constants.numberFormat.format(price) + " vnđ");
+
                     }
                 });
 

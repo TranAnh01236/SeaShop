@@ -12,26 +12,44 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.trananh.shoppingapp.R;
-import org.trananh.shoppingapp.main.category.CategoryAdapter1;
-import org.trananh.shoppingapp.model.UnitOfMeasure;
+import com.google.gson.reflect.TypeToken;
 
+import org.trananh.shoppingapp.R;
+import org.trananh.shoppingapp.controller.PriceDetailController;
+import org.trananh.shoppingapp.controller.UnitOfMeasureController;
+import org.trananh.shoppingapp.main.category.CategoryAdapter1;
+import org.trananh.shoppingapp.model.PriceDetail;
+import org.trananh.shoppingapp.model.UnitOfMeasure;
+import org.trananh.shoppingapp.util.Constants;
+import org.trananh.shoppingapp.util.MyHttpResponseArray;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class UnitAdapter extends RecyclerView.Adapter<UnitAdapter.UnitMeasureViewHolder>{
 
     private Context mContext;
     private List<UnitOfMeasure> mUnitOfMeasures;
+    private List<PriceDetail> mListPriceDetails;
     private int single_selection_position = -1;
+    private PriceDetailController mPriceDetailController;
 
     private UnitMeasureListener mUnitMeasureListener;
     public interface UnitMeasureListener{
-        void onClick(UnitOfMeasure unitOfMeasure);
+        void onClick(UnitOfMeasure unitOfMeasure, double price);
     }
 
     public UnitAdapter(Context context, UnitMeasureListener listener){
         this.mContext = context;
         this.mUnitMeasureListener = listener;
+        this.mPriceDetailController = new PriceDetailController();
+
+        MyHttpResponseArray myHttpResponseArray1 = mPriceDetailController.getAll();
+        if (myHttpResponseArray1 != null){
+            mListPriceDetails = Constants.gson.fromJson(myHttpResponseArray1.payloadJSON(), new TypeToken<List<PriceDetail>>() {}.getType());
+        }
+        if (mListPriceDetails == null)
+            mListPriceDetails = new ArrayList<>();
     }
 
     public void setData(List<UnitOfMeasure> list){
@@ -51,12 +69,21 @@ public class UnitAdapter extends RecyclerView.Adapter<UnitAdapter.UnitMeasureVie
         UnitOfMeasure unit = mUnitOfMeasures.get(position);
         if (unit == null)
             return;
-        holder.tvName.setText(unit.getBaseUnitOfMeasure().getValue().trim());
+        holder.tvName.setText(unit.getValue().trim());
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mUnitMeasureListener.onClick(unit);
+
+                double price = 0;
+
+                for (PriceDetail p : mListPriceDetails){
+                    if (unit.getId() == p.getUnitOfMeasure().getId()){
+                        price = p.getPrice();
+                    }
+                }
+
+                mUnitMeasureListener.onClick(unit, price);
                 setSingleSelection(holder.getAdapterPosition());
             }
         });

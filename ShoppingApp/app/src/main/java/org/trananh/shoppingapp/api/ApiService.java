@@ -61,7 +61,7 @@ public interface ApiService {
     Call<MyHttpResponseArray> getAllAddress();
 
     //Product----------------------------------------------------------------------------------------------------------------------------------------
-    @GET("/product/")
+    @GET("/product/all")
     Call<MyHttpResponseArray> getAllProduct();
     @GET("/product/structure_value_id/{categoryId}")
     Call<MyHttpResponseArray> getProductByCategory(@Path("categoryId") String categoryId);
@@ -73,4 +73,8 @@ public interface ApiService {
     Call<MyHttpResponse> getLowestUnitByProductId(@Path("productId") String productId);
     @GET("/unit_of_measure/product_id/{productId}")
     Call<MyHttpResponseArray> getUnitsByProductId(@Path("productId") String productId);
+
+    //PriceDetail
+    @GET("/price_detail/")
+    Call<MyHttpResponseArray> getAllPriceDetail();
 }

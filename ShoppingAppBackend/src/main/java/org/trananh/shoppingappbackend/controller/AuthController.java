@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.trananh.shoppingappbackend.model.StructureValue;
 import org.trananh.shoppingappbackend.model.User;
-import org.trananh.shoppingappbackend.repository.HierarchyStructureRepository;
 import org.trananh.shoppingappbackend.repository.StructureValueRepository;
 import org.trananh.shoppingappbackend.repository.UserRepository;
-import org.trananh.shoppingappbackend.ultilities.MyHttpResponse;
 import org.trananh.shoppingappbackend.ultilities.ResponseMap;
 
 import com.google.gson.JsonObject;

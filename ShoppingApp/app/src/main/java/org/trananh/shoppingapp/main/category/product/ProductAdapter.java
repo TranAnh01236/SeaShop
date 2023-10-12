@@ -1,6 +1,7 @@
 package org.trananh.shoppingapp.main.category.product;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,9 @@ import com.bumptech.glide.Glide;
 import com.google.gson.reflect.TypeToken;
 
 import org.trananh.shoppingapp.R;
+import org.trananh.shoppingapp.controller.PriceDetailController;
 import org.trananh.shoppingapp.controller.UnitOfMeasureController;
+import org.trananh.shoppingapp.model.PriceDetail;
 import org.trananh.shoppingapp.model.Product;
 import org.trananh.shoppingapp.model.UnitOfMeasure;
 import org.trananh.shoppingapp.util.Constants;
@@ -26,10 +29,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
+    public static final String TAG = ProductAdapter.class.getName();
     private Context mContext;
     private ProductItemListener mProductItemListener;
     private List<Product> mListProducts;
+    private List<PriceDetail> mListPriceDetails;
     private List<UnitOfMeasure> mListUnitOfMeasures;
+    private PriceDetailController mPriceDetailController;
     private UnitOfMeasureController mUnitOfMeasureController;
     public interface ProductItemListener{
         void onClick(Product product);
@@ -39,12 +45,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         this.mContext = context;
         this.mProductItemListener = listener;
         this.mUnitOfMeasureController = new UnitOfMeasureController();
+        this.mPriceDetailController = new PriceDetailController();
         MyHttpResponseArray myHttpResponseArray = mUnitOfMeasureController.getAll();
         if (myHttpResponseArray != null){
             mListUnitOfMeasures = Constants.gson.fromJson(myHttpResponseArray.payloadJSON(), new TypeToken<List<UnitOfMeasure>>() {}.getType());
         }
         if (mListUnitOfMeasures == null)
             mListUnitOfMeasures = new ArrayList<>();
+
+        MyHttpResponseArray myHttpResponseArray1 = mPriceDetailController.getAll();
+        if (myHttpResponseArray1 != null){
+            mListPriceDetails = Constants.gson.fromJson(myHttpResponseArray1.payloadJSON(), new TypeToken<List<PriceDetail>>() {}.getType());
+        }
+        if (mListPriceDetails == null)
+            mListPriceDetails = new ArrayList<>();
+
     }
 
     public void setData(List<Product> list){
@@ -71,11 +86,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         for (UnitOfMeasure uom : mListUnitOfMeasures){
             if (uom.getProduct().getId().trim().equals(product.getId().trim()) && uom.getQuantity() == 1){
                 holder.tvUnit.setText("Đơn vị: " + uom.getBaseUnitOfMeasure().getValue());
+                for (PriceDetail p : mListPriceDetails){
+                    if (p.getUnitOfMeasure().getId() == uom.getId()){
+                        holder.tvPrice.setText(String.valueOf("Giá: " + Constants.numberFormat.format(p.getPrice()) + " vnđ"));
+                    }
+                }
             }
         }
 
-
-        holder.tvPrice.setText("Giá:");
         holder.btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

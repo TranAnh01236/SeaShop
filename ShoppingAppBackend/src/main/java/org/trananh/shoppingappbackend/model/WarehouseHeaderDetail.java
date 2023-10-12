@@ -9,7 +9,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -31,10 +30,7 @@ public class WarehouseHeaderDetail implements Serializable{
 	
 	@Id
 	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name = "base_unit_of_measure_id"),
-		@JoinColumn(name = "product_id")
-	})
+	@JoinColumn(name = "unit_of_measure_id")
 	private UnitOfMeasure unitOfMeasure;
 	
 	@Column(name = "quantity", nullable = false)

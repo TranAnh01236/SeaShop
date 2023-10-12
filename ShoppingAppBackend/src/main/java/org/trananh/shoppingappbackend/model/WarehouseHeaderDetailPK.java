@@ -14,7 +14,7 @@ public class WarehouseHeaderDetailPK implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private String warehouseImportHeader;
-	private UnitOfMeasurePK unitOfMeasure;
+	private int unitOfMeasure;
 	
 	public WarehouseHeaderDetailPK() {}
 
@@ -32,8 +32,10 @@ public class WarehouseHeaderDetailPK implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		WarehouseHeaderDetailPK other = (WarehouseHeaderDetailPK) obj;
-		return Objects.equals(unitOfMeasure, other.unitOfMeasure)
+		return unitOfMeasure == other.unitOfMeasure
 				&& Objects.equals(warehouseImportHeader, other.warehouseImportHeader);
 	}
+
+	
 	
 }

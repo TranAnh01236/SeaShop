@@ -11,9 +11,13 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Currency;
 import java.util.Locale;
 
 public class Constants {
@@ -23,7 +27,9 @@ public class Constants {
     public static final String localhost = "192.168.43.93";
     public static final String emuHost = "10.0.2.2";
     public static final String port = "9090";
-    public static final String apiURL = "http://" + localhost + ":" + port + "/";
+    public static final String apiURL = "http://" + emuHost + ":" + port + "/";
+
+    public static DecimalFormat numberFormat = new DecimalFormat("###,###,###");
 
     public static GsonBuilder gsonBuilder;
     static {
